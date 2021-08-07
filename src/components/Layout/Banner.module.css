@@ -1,0 +1,13 @@
+.banner-img {
+  grid-column: 1 / span 11;
+  grid-row: 1 / span 2;
+
+  background: linear-gradient(
+      to right bottom,
+      rgba(49, 49, 49, 0.8),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url('../../images/banner-menu.jpg') no-repeat bottom center/cover;
+  height: 30vh;
+  position: relative;
+}

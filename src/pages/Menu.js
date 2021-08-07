@@ -1,10 +1,15 @@
+import Banner from '../components/Layout/Banner';
+import BannerBoard from '../components/Layout/BannerBoard';
+import MenuCard from '../components/UI/MenuCard';
+import classes from './Menu.module.css';
+
 const Menu = (props) => {
   return (
-    <div>
-      <p>Item 1</p>
-      <p>Item 2</p>
-      <p>Item 3</p>
-    </div>
+    <main className={classes['menu-grid']}>
+      <Banner />
+      <BannerBoard />
+      <MenuCard />
+    </main>
   );
 };
 
