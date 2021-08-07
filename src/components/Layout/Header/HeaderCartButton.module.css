@@ -8,3 +8,11 @@
 .bi-bag:hover {
   transform: scale(1.15);
 }
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  .bi-bag {
+    width: 20px;
+    height: 20px;
+  }
+}
