@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@200;300;400;600&display=swap');
+
 :root {
   --color-highlight: #69bc47;
 
@@ -16,19 +18,87 @@
   --color-black: #000;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+:root {
+  --color-highlight: #69bc47;
 
-* {
-  box-sizing: border-box;
+  --color-green-dark-1: #2e3832;
+  --color-green-dark-2: #32601c;
+  --color-green-light-1: #f6fbf7;
+
+  --color-grey-dark-1: #222925;
+  --color-grey-dark-2: #4b4d4b;
+  --color-grey-dark-3: #777777;
+
+  --color-grey-light-1: #f4f4f4;
+  --color-grey-light-2: #d8d8d8;
+
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 62.5%;
+}
+
+/* Tab-land 1200px*/
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* Tab-port  900px*/
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 54%;
+  }
+}
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 32%;
+  }
 }
 
 body {
-  margin: 0;
-  background-color: #3f3f3f;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--color-grey-dark-2);
+}
+
+ul {
+  list-style: none;
 }
 
 /* Button */
