@@ -1,4 +1,3 @@
-import classes from './AvailableMeals.module.css';
 import MealItem from './MealItem';
 
 const DUMMY_MEALS = [
@@ -30,6 +29,7 @@ const AvailableMeals = () => {
       {DUMMY_MEALS.map((meal) => {
         return (
           <MealItem
+            key={meal.id}
             id={meal.id}
             title={meal.title}
             description={meal.description}
