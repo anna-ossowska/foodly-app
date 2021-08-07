@@ -1,0 +1,20 @@
+.navigation {
+  background-color: var(--color-white);
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+.navigation .logo {
+  padding: 0 4rem;
+}
+
+.navigation ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 28rem;
+  padding: 0 4rem;
+}

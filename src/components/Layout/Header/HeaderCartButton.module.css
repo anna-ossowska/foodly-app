@@ -1,0 +1,10 @@
+.bi-bag {
+  margin-top: 0.6rem;
+  width: 23px;
+  height: 23px;
+  transition: all 0.2s ease-in;
+}
+
+.bi-bag:hover {
+  transform: scale(1.15);
+}

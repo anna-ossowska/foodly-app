@@ -1,3 +1,21 @@
+:root {
+  --color-highlight: #69bc47;
+
+  --color-green-dark-1: #2e3832;
+  --color-green-dark-2: #32601c;
+  --color-green-light-1: #f6fbf7;
+
+  --color-grey-dark-1: #222925;
+  --color-grey-dark-2: #4b4d4b;
+  --color-grey-dark-3: #777777;
+
+  --color-grey-light-1: #f4f4f4;
+  --color-grey-light-2: #d8d8d8;
+
+  --color-white: #fff;
+  --color-black: #000;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 * {
@@ -13,3 +31,64 @@ body {
   background-color: #3f3f3f;
 }
 
+/* Button */
+.btn-main:link,
+.btn-main:visited,
+.btn-main,
+.btn-secondary:link,
+.btn-secondary:visited,
+.btn-secondary {
+  all: unset;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 20rem;
+  transition: all 0.2s ease-in;
+}
+
+.btn-main {
+  background: linear-gradient(
+    180deg,
+    rgba(105, 188, 71, 1) 0%,
+    rgba(83, 146, 57, 1) 100%
+  );
+}
+
+.btn-main:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-main:active,
+.btn-main:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: linear-gradient(
+    180deg,
+    rgba(86, 88, 87, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.btn-secondary:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:active,
+.btn-secondary:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: var(--color-grey-dark-1);
+}
+
+.btn-secondary:hover {
+  background-color: #303633;
+}

@@ -1,0 +1,10 @@
+.bi-house {
+  margin-top: 0.6rem;
+  width: 25px;
+  height: 25px;
+  transition: all 0.2s ease-in;
+}
+
+.bi-house:hover {
+  transform: scale(1.15);
+}
