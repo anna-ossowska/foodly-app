@@ -11,3 +11,11 @@
   height: 30vh;
   position: relative;
 }
+
+/* Tab-land 1200px*/
+@media only screen and (max-width: 75em) {
+  .banner-img {
+    height: 40vh;
+    position: relative;
+  }
+}

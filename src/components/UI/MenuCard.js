@@ -15,7 +15,7 @@ const MenuCard = () => {
               Tomato Reduction base, Mozzarella, Torn Basil, Olive Oil
             </p>
           </div>
-          {/* <div className={classes['menu-form']}>
+          <div className={classes['menu-form']}>
             <form>
               <div className={classes['menu-form-control']}>
                 <label>Amount</label>
@@ -32,7 +32,7 @@ const MenuCard = () => {
                 <button className="btn-secondary">Add</button>
               </div>
             </form>
-          </div> */}
+          </div>
         </li>
       </ul>
     </div>

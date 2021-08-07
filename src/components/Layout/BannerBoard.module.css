@@ -30,3 +30,52 @@
   text-align: justify;
   hyphens: auto;
 }
+
+/* Tab-land 1200px*/
+@media only screen and (max-width: 75em) {
+  .banner-board {
+    height: 40rem;
+    width: 70%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(22.5%, -50%);
+    padding: 7rem;
+    text-align: center;
+  }
+
+  .banner-board h3 {
+    font-size: 3.5rem;
+    margin: 3.5rem 0;
+  }
+
+  .banner-board hr {
+    background-color: var(--color-white);
+    width: 20%;
+    align-self: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .banner-board p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    hyphens: none;
+  }
+}
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  .banner-board {
+    padding: 5rem;
+  }
+
+  .banner-board h3 {
+    font-size: 2.75rem;
+    margin: 3rem 0;
+  }
+
+  .banner-board hr {
+    margin-bottom: 3rem;
+  }
+}
