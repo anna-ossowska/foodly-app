@@ -4,7 +4,6 @@ const HeaderCartButton = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="#8B8D8B"
       className={`${classes.bi} ${classes['bi-bag']}`}
       viewBox="0 0 16 16"
     >

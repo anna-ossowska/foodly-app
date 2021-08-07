@@ -3,6 +3,7 @@ import classes from './Header.module.css';
 import HeaderCartButton from './HeaderCartButton';
 import HeaderHomeButton from './HeaderHomeButton';
 import HeaderOrderButton from './OrderButton';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -12,15 +13,17 @@ const Header = () => {
           <img src={logo} alt="logo" />
         </div>
         <ul>
-          <li>
-            {/* Home */}
+          <NavLink to="/home">
             <HeaderHomeButton />
-          </li>
-          <li>
-            {/* Cart */}
+          </NavLink>
+
+          <NavLink to="/menu">
             <HeaderCartButton />
-          </li>
-          <HeaderOrderButton />
+          </NavLink>
+
+          <NavLink to="/menu">
+            <HeaderOrderButton />
+          </NavLink>
         </ul>
       </nav>
     </header>
