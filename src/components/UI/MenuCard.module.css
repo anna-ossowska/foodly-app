@@ -22,72 +22,6 @@
   margin: 1rem 0;
 }
 
-.menu-title {
-  font-size: 2.5rem;
-}
-.menu-price {
-  color: var(--color-grey-dark-3);
-}
-
-.menu-description {
-  font-size: 1.8rem;
-}
-
-.menu-form {
-  display: flex;
-  align-items: center;
-}
-
-.menu-form-control {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-form-control label {
-  text-align: center;
-  padding: 0.5rem 0;
-  opacity: 0;
-  transform: translateY(1rem);
-  transition: all 0.25s ease-in;
-  font-weight: bolder;
-  color: var(--color-highlight);
-  font-size: 1.25rem;
-}
-
-.menu-form-control:hover label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.menu-form input,
-.menu-form button {
-  font-size: 1.5rem;
-}
-
-.menu-form input {
-  text-align: center;
-  margin: 0 0.3rem;
-  padding: 0.25rem 0rem;
-  color: var(--color-grey-dark-3);
-}
-
-.menu-form input:focus {
-  outline: none;
-}
-
-.btn-plus,
-.btn-minus {
-  all: unset;
-  border: var(--color-grey-light-2) solid 1px;
-  padding: 0 0.8rem;
-}
-
-.form-action {
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 1.25rem;
-}
-
 /* Tab-land 1200px*/
 @media only screen and (max-width: 75em) {
   .menu-card {
@@ -96,10 +30,6 @@
     top: -13rem;
     padding: 8rem 10rem;
     margin: 0 7rem;
-  }
-
-  .menu-info {
-    margin-right: 3rem;
   }
 }
 

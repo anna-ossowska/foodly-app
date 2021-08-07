@@ -1,0 +1,17 @@
+.meal-title {
+  font-size: 2.5rem;
+}
+.meal-price {
+  color: var(--color-grey-dark-3);
+}
+
+.meal-description {
+  font-size: 1.8rem;
+}
+
+/* Tab-land 1200px*/
+@media only screen and (max-width: 75em) {
+  .menu-info {
+    margin-right: 3rem;
+  }
+}

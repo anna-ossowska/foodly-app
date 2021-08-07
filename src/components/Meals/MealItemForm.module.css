@@ -1,0 +1,47 @@
+.menu-form {
+  display: flex;
+  align-items: center;
+}
+
+.menu-form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-form-control label {
+  text-align: center;
+  padding: 0.5rem 0;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.25s ease-in;
+  font-weight: bolder;
+  color: var(--color-highlight);
+  font-size: 1.25rem;
+}
+
+.menu-form-control:hover label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-form input,
+.menu-form button {
+  font-size: 1.5rem;
+}
+
+.menu-form input {
+  text-align: center;
+  margin: 0 0.3rem;
+  padding: 0.25rem 0rem;
+  color: var(--color-grey-dark-3);
+}
+
+.menu-form input:focus {
+  outline: none;
+}
+
+.form-action {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1.25rem;
+}
