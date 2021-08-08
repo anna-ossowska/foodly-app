@@ -13,7 +13,7 @@ const CartItem = (props) => {
 
       <div className={classes['cart-actions']}>
         <button className={classes['btn-plus']}>+</button>
-        <input type="text" inputmode="numeric" defaultValue="1" />
+        <input type="text" inputMode="numeric" defaultValue="1" />
         <button className={classes['btn-minus']}>&#8211;</button>
       </div>
     </li>

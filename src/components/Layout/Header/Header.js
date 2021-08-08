@@ -1,11 +1,11 @@
 import logo from '../../../images/logo.png';
-import classes from './Header.module.css';
 import HeaderCartButton from './HeaderCartButton';
 import HeaderHomeButton from './HeaderHomeButton';
 import HeaderOrderButton from './OrderButton';
+import classes from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <nav className={classes.navigation}>
@@ -18,7 +18,7 @@ const Header = () => {
           </NavLink>
 
           <li>
-            <HeaderCartButton />
+            <HeaderCartButton onClick={props.onClick} />
           </li>
 
           <NavLink to="/menu">
