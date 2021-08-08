@@ -28,9 +28,13 @@ const DUMMY_MEALS = [
 const Cart = (props) => {
   return (
     <Modal>
-      {DUMMY_MEALS.map((meal) => {
-        return <CartItem key={meal.id} title={meal.title} price={meal.price} />;
-      })}
+      <ul className={classes['cart-items']}>
+        {DUMMY_MEALS.map((meal) => {
+          return (
+            <CartItem key={meal.id} title={meal.title} price={meal.price} />
+          );
+        })}
+      </ul>
       <div className={classes['cart-summary']}>
         <h3 className={classes.total}>Total</h3>
         <h3 className={classes['total-amount']}>$120</h3>

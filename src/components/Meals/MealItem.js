@@ -6,7 +6,7 @@ const MealItem = (props) => {
     <li>
       <div className={classes['meal-info']}>
         <h4 className={classes['meal-title']}>
-          {props.title}, &nbsp;
+          {props.title} &nbsp;&nbsp;&nbsp;
           <span className={classes['meal-price']}>${props.price}</span>
         </h4>
         <hr />

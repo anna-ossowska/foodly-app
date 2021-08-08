@@ -1,3 +1,8 @@
+.cart-items {
+  max-height: 23rem;
+  overflow: auto;
+}
+
 .cart-summary {
   display: flex;
   justify-content: space-between;

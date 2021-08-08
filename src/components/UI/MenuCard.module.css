@@ -14,12 +14,15 @@
 }
 
 .menu-card li:not(:last-child) {
-  margin-bottom: 6rem;
+  margin-bottom: 6.5rem;
 }
 
 .menu-card hr {
-  width: 7rem;
-  margin: 1rem 0;
+  width: 6rem;
+  margin: 1.5rem 0;
+
+  background-color: var(--color-grey-dark-1);
+  height: 3px;
 }
 
 /* Tab-land 1200px*/

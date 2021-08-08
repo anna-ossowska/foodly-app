@@ -1,8 +1,14 @@
 .meal-title {
   font-size: 2.5rem;
+  /* font-family: 'Poppins', sans-serif;
+  font-weight: 500; */
+  letter-spacing: 0.08rem;
 }
 .meal-price {
-  color: var(--color-grey-dark-3);
+  color: var(--color-green-dark-2);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 2.25rem;
 }
 
 .meal-description {

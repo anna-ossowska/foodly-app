@@ -107,7 +107,10 @@ ul {
 .btn-main,
 .btn-secondary:link,
 .btn-secondary:visited,
-.btn-secondary {
+.btn-secondary,
+.btn-outline:link,
+.btn-outline:visited,
+.btn-outline {
   all: unset;
   cursor: pointer;
   color: var(--color-white);
@@ -136,6 +139,7 @@ ul {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+/* Secondary */
 .btn-secondary {
   background: linear-gradient(
     180deg,
@@ -161,4 +165,22 @@ ul {
 
 .btn-secondary:hover {
   background-color: #303633;
+}
+
+/* Outline */
+.btn-outline {
+  background-color: var(-color-white);
+  border: solid var(--color-grey-dark-1) 0.5px;
+  color: var(--color-grey-dark-1);
+}
+
+.btn-outline:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline:active,
+.btn-outline:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
