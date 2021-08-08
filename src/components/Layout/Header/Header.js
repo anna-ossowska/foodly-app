@@ -17,9 +17,9 @@ const Header = () => {
             <HeaderHomeButton />
           </NavLink>
 
-          <NavLink to="/menu">
+          <li>
             <HeaderCartButton />
-          </NavLink>
+          </li>
 
           <NavLink to="/menu">
             <HeaderOrderButton />

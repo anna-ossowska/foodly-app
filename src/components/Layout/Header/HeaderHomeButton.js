@@ -5,7 +5,7 @@ const HeaderHomeButton = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className={`${classes.bi} ${classes['bi-house']}`}
-      viewBox="0 0 16 16"
+      viewBox="0 0 15 15"
     >
       <path
         fill-rule="evenodd"
