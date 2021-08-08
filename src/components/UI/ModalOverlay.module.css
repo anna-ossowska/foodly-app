@@ -5,9 +5,9 @@
   left: 50%;
   width: 40%;
   transform: translate(-50%, 10%);
-
   background-color: var(--color-white);
   border-radius: 3rem;
+  animation: reveal 0.4s ease-out;
 }
 
 /* Tab-land 1200px*/
@@ -22,5 +22,14 @@
 @media only screen and (max-width: 37.5em) {
   .modal {
     width: 80%;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

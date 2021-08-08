@@ -18,24 +18,6 @@
   --color-black: #000;
 }
 
-:root {
-  --color-highlight: #69bc47;
-
-  --color-green-dark-1: #2e3832;
-  --color-green-dark-2: #32601c;
-  --color-green-light-1: #f6fbf7;
-
-  --color-grey-dark-1: #222925;
-  --color-grey-dark-2: #4b4d4b;
-  --color-grey-dark-3: #777777;
-
-  --color-grey-light-1: #f4f4f4;
-  --color-grey-light-2: #d8d8d8;
-
-  --color-white: #fff;
-  --color-black: #000;
-}
-
 *,
 *::before,
 *::after {

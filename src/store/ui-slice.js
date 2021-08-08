@@ -6,10 +6,12 @@ const uiSlice = createSlice({
   reducers: {
     showCart(state) {
       state.isCartShown = true;
+      document.getElementById('root').style.backdropFilter = 'blur(5px)';
     },
 
     hideCart(state) {
       state.isCartShown = false;
+      document.getElementById('root').style.backdropFilter = 'blur(0)';
     },
   },
 });
