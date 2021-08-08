@@ -1,0 +1,25 @@
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-top: var(--color-grey-dark-1) 3px solid;
+  margin-top: 4rem;
+}
+
+.cart-summary .total,
+.cart-summary .total-amount {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+}
+
+.summary-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.summary-actions button {
+  margin-left: 1.5rem;
+  font-size: 1.75rem;
+}

@@ -1,0 +1,68 @@
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 2rem 2.5rem 0;
+}
+
+.cart-item:not(:last-child) {
+  border-bottom: var(--color-grey-light-2) 1px solid;
+}
+
+.cart-info h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+}
+
+.cart-info .price {
+  font-size: 1.75rem;
+  color: var(--color-green-dark-2);
+  letter-spacing: 0.04rem;
+  margin-right: 3rem;
+}
+
+.cart-details {
+  display: flex;
+  align-items: center;
+}
+
+.cart-info .amount {
+  background-color: var(--color-white);
+  border: solid 1px var(--color-grey-light-2);
+  color: var(--color-grey-dark-3);
+  padding: 0.25rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-actions input {
+  width: 3rem;
+  height: 2.5rem;
+  text-align: center;
+  background-color: var(--color-highlight);
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+.cart-actions input:focus {
+  outline: none;
+}
+
+.btn-plus,
+.btn-minus {
+  all: unset;
+  padding: 0 0.8rem;
+  height: 2.5rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
