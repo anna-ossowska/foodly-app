@@ -11,12 +11,12 @@ const Layout = (props) => {
 
   const dispatch = useDispatch();
 
-  const clickCartHandler = () => {
+  const showCartHandler = () => {
     dispatch(uiActions.showCart());
   };
   return (
     <Fragment>
-      <Header onClick={clickCartHandler} />
+      <Header onClick={showCartHandler} />
       {isCartShown && <Cart />}
       <main>{props.children}</main>
     </Fragment>

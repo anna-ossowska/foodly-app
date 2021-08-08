@@ -1,6 +1,8 @@
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
+import { useDispatch } from 'react-redux';
+import { uiActions } from '../../store/ui-slice';
 
 const DUMMY_MEALS = [
   {
@@ -26,6 +28,12 @@ const DUMMY_MEALS = [
 ];
 
 const Cart = (props) => {
+  const dispatch = useDispatch();
+
+  const hideCartHandler = () => {
+    dispatch(uiActions.hideCart());
+  };
+
   return (
     <Modal>
       <ul className={classes['cart-items']}>
@@ -40,7 +48,9 @@ const Cart = (props) => {
         <h3 className={classes['total-amount']}>$120</h3>
       </div>
       <div className={classes['summary-actions']}>
-        <button className="btn-outline">Cancel</button>
+        <button className="btn-outline" onClick={hideCartHandler}>
+          Cancel
+        </button>
         <button className="btn-secondary">Order</button>
       </div>
     </Modal>
