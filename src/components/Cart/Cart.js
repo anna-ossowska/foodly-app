@@ -16,6 +16,11 @@ const Cart = (props) => {
 
   return (
     <Modal>
+      {cartItems.length === 0 ? (
+        <p className={classes['msg-empty']}>Your cart is empty.</p>
+      ) : (
+        ''
+      )}
       <ul className={classes['cart-items']}>
         {cartItems.map((item) => {
           return (
@@ -38,9 +43,13 @@ const Cart = (props) => {
       </div>
       <div className={classes['summary-actions']}>
         <button className="btn-outline" onClick={hideCartHandler}>
-          Cancel
+          {cartItems.length === 0 ? 'Go shopping!' : 'Cancel'}
         </button>
-        <button className="btn-secondary">Order</button>
+        {cartItems.length === 0 ? (
+          ''
+        ) : (
+          <button className="btn-secondary">Order</button>
+        )}
       </div>
     </Modal>
   );
