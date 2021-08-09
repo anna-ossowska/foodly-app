@@ -19,18 +19,33 @@
   padding: 0 4rem;
 }
 
-.badge {
-  top: 0;
-  left: 0;
-  min-height: 1rem;
-  min-width: 1rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: 20rem;
-  background-color: var(--color-grey-dark-1);
-  color: var(--color-white);
+.cart-link {
   position: relative;
-  top: 0;
-  left: -1.25rem;
+}
+
+.badge {
+  position: absolute;
+  z-index: 2;
+  top: 2rem;
+  left: 1.35rem;
+  height: 2rem;
+  width: 2rem;
+  color: var(--color-white);
+  padding: 0 0.5px;
+  text-align: center;
+}
+
+.cart-link::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 1.75rem;
+  left: 1.35rem;
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  background-color: var(--color-grey-dark-1);
+  border-radius: 50%;
 }
 
 /* Phone  600px*/
@@ -44,6 +59,14 @@
   }
 
   .badge {
-    padding: 0.7rem 1.2rem;
+    top: 3rem;
+    left: 2.5rem;
+  }
+
+  .cart-link::before {
+    top: 2.5rem;
+    left: 2.15rem;
+    height: 2.75rem;
+    width: 2.75rem;
   }
 }

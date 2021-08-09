@@ -20,7 +20,7 @@ const Header = (props) => {
             <HeaderHomeButton />
           </NavLink>
 
-          <li>
+          <li className={classes['cart-link']}>
             <HeaderCartButton onClick={props.onClick} />
             <span className={classes.badge}>{totalQuantity}</span>
           </li>
