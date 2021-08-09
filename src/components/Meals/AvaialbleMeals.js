@@ -1,12 +1,12 @@
 import MealItem from './MealItem';
 
-const DUMMY_MEALS = [
+const AVAILABLE_MEALS = [
   {
     id: 'm1',
     title: 'Salad 1',
     description:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium vel perspiciatis illum ea modi illo quidem rerum.',
-    price: 22.99,
+    price: 12.99,
   },
   {
     id: 'm2',
@@ -26,7 +26,7 @@ const DUMMY_MEALS = [
 const AvailableMeals = () => {
   return (
     <ul>
-      {DUMMY_MEALS.map((meal) => {
+      {AVAILABLE_MEALS.map((meal) => {
         return (
           <MealItem
             key={meal.id}

@@ -36,6 +36,10 @@
   color: var(--color-grey-dark-3);
 }
 
+.invalid-input {
+  border: red solid 2px;
+}
+
 .menu-form input:focus {
   outline: none;
 }
