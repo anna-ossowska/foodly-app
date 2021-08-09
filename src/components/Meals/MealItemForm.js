@@ -8,11 +8,11 @@ const MealItem = (props) => {
   const mealSubmitHandler = (e) => {
     e.preventDefault();
 
-    const enetredAmount = +amountInputRef.current.value;
+    let enetredAmount = +amountInputRef.current.value;
     console.log(enetredAmount);
 
     // Validate input
-    if (enetredAmount > 20 || enetredAmount < 0) {
+    if (enetredAmount > 5 || enetredAmount < 0) {
       setIsInputValid(false);
       return;
     }
@@ -29,7 +29,7 @@ const MealItem = (props) => {
             type="number"
             min="1"
             step="1"
-            max="20"
+            max="5"
             defaultValue="1"
             ref={amountInputRef}
           />

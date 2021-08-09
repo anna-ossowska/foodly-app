@@ -19,16 +19,21 @@ const cartSlice = createSlice({
           quantity: newItem.quantity,
         });
         state.totalPrice = state.totalPrice + newItem.price * newItem.quantity;
+        state.totalQuantity = state.totalQuantity + newItem.quantity;
       } else {
-        // remove total based on old quantity
+        // remove totals based on old quantity
         state.totalPrice =
           state.totalPrice - existingItem.quantity * existingItem.price;
 
-        // update quantity and total
+        state.totalQuantity = state.totalQuantity - existingItem.quantity;
+
+        // update quantity and totals
         existingItem.quantity = existingItem.quantity + newItem.quantity;
 
         state.totalPrice =
           state.totalPrice + existingItem.quantity * existingItem.price;
+
+        state.totalQuantity = state.totalQuantity + existingItem.quantity;
       }
     },
     removeItemFromCart(state) {},

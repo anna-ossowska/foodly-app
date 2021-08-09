@@ -5,7 +5,10 @@ import HeaderOrderButton from './OrderButton';
 import classes from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+
 const Header = (props) => {
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   return (
     <header>
       <nav className={classes.navigation}>
@@ -19,6 +22,7 @@ const Header = (props) => {
 
           <li>
             <HeaderCartButton onClick={props.onClick} />
+            <span className={classes.badge}>{totalQuantity}</span>
           </li>
 
           <NavLink to="/menu">
