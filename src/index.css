@@ -90,6 +90,9 @@ ul {
 .btn-secondary:link,
 .btn-secondary:visited,
 .btn-secondary,
+.btn-add:link,
+.btn-add:visited,
+.btn-add,
 .btn-outline:link,
 .btn-outline:visited,
 .btn-outline {
@@ -146,6 +149,34 @@ ul {
 }
 
 .btn-secondary:hover {
+  background-color: #303633;
+}
+
+/* Add */
+.btn-add {
+  background: linear-gradient(
+    180deg,
+    rgba(86, 88, 87, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.btn-add:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-add:active,
+.btn-add {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-add {
+  background-color: var(--color-grey-dark-1);
+}
+
+.btn-add:hover {
   background-color: #303633;
 }
 

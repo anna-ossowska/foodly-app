@@ -36,7 +36,7 @@ const MealItem = (props) => {
         </div>
 
         <div className={classes['form-action']}>
-          <button className="btn-secondary">Add</button>
+          <button className="btn-add">Add</button>
         </div>
       </form>
     </div>
