@@ -9,7 +9,6 @@ const MealItem = (props) => {
     e.preventDefault();
 
     let enetredAmount = +amountInputRef.current.value;
-    console.log(enetredAmount);
 
     // Validate input
     if (enetredAmount > 5 || enetredAmount < 0) {

@@ -1,33 +1,13 @@
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/ui-slice';
 
-const DUMMY_MEALS = [
-  {
-    id: 'm1',
-    title: 'Salad 1',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium vel perspiciatis illum ea modi illo quidem rerum.',
-    price: 22.99,
-  },
-  {
-    id: 'm2',
-    title: 'Salad 2',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium vel perspiciatis illum ea modi illo quidem rerum.',
-    price: 16.5,
-  },
-  {
-    id: 'm3',
-    title: 'Green Bowl',
-    description: 'Healthy...and green...',
-    price: 18.99,
-  },
-];
-
 const Cart = (props) => {
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalPrice = useSelector((state) => state.cart.totalPrice.toFixed(2));
+
   const dispatch = useDispatch();
 
   const hideCartHandler = () => {
@@ -37,15 +17,24 @@ const Cart = (props) => {
   return (
     <Modal>
       <ul className={classes['cart-items']}>
-        {DUMMY_MEALS.map((meal) => {
+        {cartItems.map((item) => {
           return (
-            <CartItem key={meal.id} title={meal.title} price={meal.price} />
+            <CartItem
+              key={item.id}
+              item={{
+                id: item.id,
+                title: item.title,
+                description: item.description,
+                quantity: item.quantity,
+                price: item.price,
+              }}
+            />
           );
         })}
       </ul>
       <div className={classes['cart-summary']}>
         <h3 className={classes.total}>Total</h3>
-        <h3 className={classes['total-amount']}>$120</h3>
+        <h3 className={classes['total-amount']}>${totalPrice}</h3>
       </div>
       <div className={classes['summary-actions']}>
         <button className="btn-outline" onClick={hideCartHandler}>

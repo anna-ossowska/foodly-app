@@ -6,16 +6,15 @@ import { cartActions } from '../../store/cart-slice';
 
 const MealItem = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
-  const totalPrice = useSelector((state) => state.cart.totalPrice.toFixed(2));
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
+
+  console.log(cartItems, totalPrice);
+
   const dispatch = useDispatch();
 
-  console.log('cartitems', cartItems);
-  console.log('totalPrice', totalPrice);
   const { id, title, description, price } = props;
 
   const addToCartHandler = (mealData) => {
-    console.log('Item added');
-    console.log(mealData);
     dispatch(
       cartActions.addItemToCart({
         id,
