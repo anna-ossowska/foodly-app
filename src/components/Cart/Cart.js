@@ -43,7 +43,7 @@ const Cart = (props) => {
       </div>
       <div className={classes['summary-actions']}>
         <button className="btn-outline" onClick={hideCartHandler}>
-          {cartItems.length === 0 ? 'Go shopping!' : 'Cancel'}
+          {cartItems.length === 0 ? 'Go back' : 'Cancel'}
         </button>
         {cartItems.length === 0 ? (
           ''
