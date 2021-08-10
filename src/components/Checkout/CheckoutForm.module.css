@@ -1,3 +1,57 @@
 .form-section {
   background-color: var(--color-white);
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 0;
+  overflow-x: hidden;
+}
+
+.form-container {
+  /* border: var(--color-grey-light-3) 1px solid; */
+  box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.15);
+  border-radius: 1.5rem;
+  padding: 6rem 8rem;
+  width: 70rem;
+}
+
+.form-control {
+  padding: 1.25rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  padding: 0 0 0.5rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--color-grey-light-3);
+}
+
+.form input {
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  border: 0.75px solid var(--color-grey-dark-3);
+  font-size: 1.5rem;
+  /* add to globals */
+  font-family: 'Poppins', sans-serif;
+}
+
+.form input:focus {
+  border: 2px solid var(--color-highlight);
+  outline: none;
+}
+
+.form-checkout-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem 0 0;
+}
+
+.form-checkout-actions button {
+  margin-left: 1.5rem;
+}
