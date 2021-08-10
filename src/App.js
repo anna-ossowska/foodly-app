@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout';
 import Footer from './components/Layout/Footer';
 import Menu from './pages/Menu';
 import Home from './pages/Home';
+import Checkout from './components/Checkout/Checkout';
 import NotFound from './pages/NotFound';
 
 import Header from './components/Layout/Header/Header';
@@ -90,6 +91,10 @@ function App() {
 
           <Route path="/menu">
             <Menu />
+          </Route>
+
+          <Route path="/checkout">
+            <Checkout />
           </Route>
 
           <Route path="*">

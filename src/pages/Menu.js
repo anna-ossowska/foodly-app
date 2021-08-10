@@ -1,4 +1,4 @@
-import Banner from '../components/Layout/Banner';
+import BannerMenu from '../components/Layout/BannerMenu';
 import BannerBoard from '../components/Layout/BannerBoard';
 import MenuCard from '../components/UI/MenuCard';
 import classes from './Menu.module.css';
@@ -6,7 +6,7 @@ import classes from './Menu.module.css';
 const Menu = (props) => {
   return (
     <main className={classes['menu-grid']}>
-      <Banner />
+      <BannerMenu />
       <BannerBoard />
       <MenuCard />
     </main>

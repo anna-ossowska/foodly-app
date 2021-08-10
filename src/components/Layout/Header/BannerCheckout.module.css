@@ -1,0 +1,29 @@
+.banner-checkout {
+  background: linear-gradient(
+      to right bottom,
+      rgba(70, 69, 69, 0.8),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../../../images/green-field.jpg') no-repeat center center/cover;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  color: var(--color-white);
+  width: 40%;
+  padding: 5rem;
+}
+
+.banner-text h2 {
+  font-weight: 500;
+  font-size: 5rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.banner-text p {
+  font-size: 2.25rem;
+}
