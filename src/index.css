@@ -96,8 +96,8 @@ ul {
 .btn-outline:link,
 .btn-outline:visited,
 .btn-outline {
-  all: unset;
-  cursor: pointer;
+  /* all: unset;
+  cursor: pointer; */
   color: var(--color-white);
   font-size: 1.5rem;
   padding: 0.5rem 2rem;

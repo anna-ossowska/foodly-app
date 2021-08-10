@@ -15,12 +15,17 @@ const useInput = (validate) => {
   const isValid = validate(enteredValue);
   const hasError = !isValid && valueIsTouched;
 
+  const resetInput = () => {
+    setEnteredValue('');
+  };
+
   return {
     enteredValue,
     valueChangeHandler,
     valueBlurHandler,
     isValid,
     hasError,
+    resetInput,
   };
 };
 
