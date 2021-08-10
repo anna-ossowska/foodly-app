@@ -1,0 +1,32 @@
+.spinner {
+  margin: 0 auto;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in;
+}
+
+.spinner svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 9rem;
+  width: 9rem;
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tab-land 1200px*/
+@media only screen and (max-width: 75em) {
+  .spinner svg {
+    left: 45%;
+  }
+}

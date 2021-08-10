@@ -202,3 +202,11 @@ ul {
   visibility: hidden;
   opacity: 0;
 }
+
+.min-height {
+  height: 0;
+}
+
+.max-height {
+  height: 100vh;
+}
