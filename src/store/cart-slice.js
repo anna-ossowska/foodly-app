@@ -5,9 +5,12 @@ const cartSlice = createSlice({
   initialState: { items: [], totalQuantity: 0, totalPrice: 0 },
   reducers: {
     replaceCart(state, action) {
-      state.items = action.payload.items;
+      state.items = action.payload.items || [];
       state.totalQuantity = action.payload.totalQuantity;
       state.totalPrice = action.payload.totalPrice;
+
+      // Resolving Firebase calc bug
+      if (state.items.length === 0) state.totalPrice = 0;
     },
     addItemToCart(state, action) {
       const newItem = action.payload;

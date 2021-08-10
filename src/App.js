@@ -1,4 +1,4 @@
-import { Fragment, useEfefct, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
@@ -27,20 +27,8 @@ function App() {
     dispatch(uiActions.showCart());
   };
 
-  // SENDING HTTP REQUESTS
-
-  // Create useEffect in App.js
-  // import cart useSelection, use dispatch, and cart actions
-  // add replaceCart action in cart-slice, which acceps items, total amount and totalPrice as payload
-
-  // send PUT request to firebase (you send your current cart data)
-  // send GET request whenever page reloads
-
-  // We want to send PUT request every time cart state changes
-
+  // --- HTTP PUT REQUEST ---
   useEffect(() => {
-    console.log('Cart changing');
-
     const sendCartData = async () => {
       const response = await fetch(
         'https://react-http-92c39-default-rtdb.europe-west1.firebasedatabase.app/foodlycart.json',
@@ -50,26 +38,42 @@ function App() {
         }
       );
 
-      console.log('reponse', response);
       if (!response.ok) {
         throw new Error('Cart data not found.');
       }
-
-      const cartData = await response.json();
-      console.log('cartData', cartData);
     };
 
-    // It blocks the cart from being sent when the Effect executes for the first time, so when application starts
-    // Thus, we avoid resetting cart to its initial state: { items: [], totalQuantity: 0, totalPrice: 0 } every time we reload the
+    // It blocks the cart from being sent when the Effect executes for the first time, so when application starts. Thus, we avoid resetting cart to its initial state.
     if (isInitial) {
       isInitial = false;
       return;
     }
 
     sendCartData().catch((err) => {
-      console.error('Something went wrong' || err);
+      console.error(err || 'Something went wrong');
     });
   }, [cartState]);
+
+  // --- HTTP GET REQUEST ---
+  useEffect(() => {
+    const getCartData = async () => {
+      const response = await fetch(
+        'https://react-http-92c39-default-rtdb.europe-west1.firebasedatabase.app/foodlycart.json'
+      );
+
+      if (!response.ok) {
+        throw new Error('Cart data cannot be fetched.');
+      }
+
+      const cartData = await response.json();
+
+      dispatch(cartActions.replaceCart(cartData));
+    };
+
+    getCartData().catch((err) => {
+      console.error(err || 'Something went wrong');
+    });
+  }, [dispatch]);
 
   return (
     <Fragment>
