@@ -25,20 +25,21 @@
   flex-direction: column;
 }
 
-.form label {
+.form-control label {
   padding: 0 0 0.5rem;
   font-weight: 500;
   font-size: 1.6rem;
   color: var(--color-grey-light-3);
 }
 
-.form input {
+.form-control input {
   padding: 0.85rem 1rem;
   border-radius: 0.5rem;
   border: 0.75px solid var(--color-grey-dark-3);
   font-size: 1.5rem;
   /* add to globals */
   font-family: 'Poppins', sans-serif;
+  transition: border 0.1s ease-in;
 }
 
 .form input:focus {
@@ -54,4 +55,10 @@
 
 .form-checkout-actions button {
   margin-left: 1.5rem;
+}
+
+/* Errors */
+.err {
+  padding: 1rem 0.5rem;
+  color: #962020;
 }

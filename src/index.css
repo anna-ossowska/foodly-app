@@ -210,3 +210,8 @@ ul {
 .max-height {
   height: 100vh;
 }
+
+.invalid {
+  border: 2px solid #962020 !important;
+  background-color: #ffefec;
+}

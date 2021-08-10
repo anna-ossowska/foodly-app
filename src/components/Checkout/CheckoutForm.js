@@ -12,7 +12,7 @@ const CheckoutForm = () => {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 0);
 
     return () => {
       clearTimeout(timer);
@@ -21,17 +21,66 @@ const CheckoutForm = () => {
 
   const spinnerClasses = isLoading ? 'max-height' : 'hidden min-height';
 
+  // VALIDATION
+
+  const [enteredName, setEnteredName] = useState('');
+  const [nameIsTouched, setNameIsTouched] = useState(false);
+
+  const firstNameChangeHandler = (e) => {
+    console.log('change', e.target.value);
+    setEnteredName(e.target.value);
+  };
+
+  const lastNameBlurHandler = (e) => {
+    console.log('blur', e.target.value);
+    setNameIsTouched(true);
+  };
+
+  const isNotEmpty = (value) => value.trim() !== '';
+
+  const nameInputIsValid = isNotEmpty(enteredName);
+  const nameInputHasError = !nameInputIsValid && nameIsTouched;
+
+  let isFormValid = false;
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (nameInputIsValid) {
+      isFormValid = true;
+    }
+
+    if (!isFormValid) return;
+  };
+
+  console.log('isvalid', nameInputIsValid);
+  console.log('has error', nameInputHasError);
+
+  const nameErrClasses = nameInputHasError ? 'invalid' : '';
+
   return (
     <Fragment>
-      <Spinner className={spinnerClasses} />
+      {/* <Spinner className={spinnerClasses} /> */}
       {!isLoading && (
         <section className={classes['form-section']}>
           <BannerCheckout />
-          <form className={classes.form}>
+          <form onSubmit={submitHandler} className={classes.form}>
             <div className={classes['form-container']}>
               <div className={classes['form-control']}>
                 <label htmlFor="first-name">First Name</label>
-                <input type="text" id="first-name" />
+                <input
+                  type="text"
+                  id="first-name"
+                  onChange={firstNameChangeHandler}
+                  onBlur={lastNameBlurHandler}
+                  value={enteredName}
+                  className={nameErrClasses}
+                />
+                {nameInputHasError && (
+                  <p className={classes.err}>
+                    Field cannot be empty and must contain characters
+                  </p>
+                )}
               </div>
               <div className={classes['form-control']}>
                 <label htmlFor="last-name">Last Name</label>
