@@ -4,6 +4,8 @@ import classes from './CheckoutForm.module.css';
 
 import { Fragment, useEffect, useState } from 'react';
 
+import useInput from '../../hooks/use-input';
+
 const CheckoutForm = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,42 +23,33 @@ const CheckoutForm = () => {
 
   const spinnerClasses = isLoading ? 'max-height' : 'hidden min-height';
 
-  // VALIDATION
-
-  const [enteredName, setEnteredName] = useState('');
-  const [nameIsTouched, setNameIsTouched] = useState(false);
-
-  const firstNameChangeHandler = (e) => {
-    console.log('change', e.target.value);
-    setEnteredName(e.target.value);
-  };
-
-  const lastNameBlurHandler = (e) => {
-    console.log('blur', e.target.value);
-    setNameIsTouched(true);
-  };
-
+  // ------- VALIDATION -------
   const isNotEmpty = (value) => value.trim() !== '';
 
-  const nameInputIsValid = isNotEmpty(enteredName);
-  const nameInputHasError = !nameInputIsValid && nameIsTouched;
+  const {
+    enteredValue: enteredName,
+    valueChangeHandler: nameChangeHandler,
+    valueBlurHandler: nameBlurHandler,
+    isValid: nameIsValid,
+    hasError: nameHasError,
+  } = useInput(isNotEmpty);
 
   let isFormValid = false;
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (nameInputIsValid) {
+    if (nameIsValid) {
       isFormValid = true;
     }
 
     if (!isFormValid) return;
   };
 
-  console.log('isvalid', nameInputIsValid);
-  console.log('has error', nameInputHasError);
+  console.log('isvalid', nameIsValid);
+  console.log('has error', nameHasError);
 
-  const nameErrClasses = nameInputHasError ? 'invalid' : '';
+  const nameErrClasses = nameHasError ? 'invalid' : '';
 
   return (
     <Fragment>
@@ -71,12 +64,12 @@ const CheckoutForm = () => {
                 <input
                   type="text"
                   id="first-name"
-                  onChange={firstNameChangeHandler}
-                  onBlur={lastNameBlurHandler}
+                  onChange={nameChangeHandler}
+                  onBlur={nameBlurHandler}
                   value={enteredName}
                   className={nameErrClasses}
                 />
-                {nameInputHasError && (
+                {nameHasError && (
                   <p className={classes.err}>
                     Field cannot be empty and must contain characters
                   </p>
@@ -102,7 +95,7 @@ const CheckoutForm = () => {
                 <label htmlFor="phone">Phone Number</label>
                 <input type="text" id="phone" />
               </div>
-              <div className={classes['form-checkout-actions']}>
+              <div className={classes['form-actions']}>
                 <button type="button" className="btn-outline">
                   Cancel
                 </button>

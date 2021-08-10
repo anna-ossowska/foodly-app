@@ -47,13 +47,13 @@
   outline: none;
 }
 
-.form-checkout-actions {
+.form-actions {
   display: flex;
   justify-content: flex-end;
   padding: 3rem 0 0;
 }
 
-.form-checkout-actions button {
+.form-actions button {
   margin-left: 1.5rem;
 }
 
