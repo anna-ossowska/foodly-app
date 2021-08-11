@@ -21,6 +21,7 @@ let isInitial = true;
 function App() {
   const isCartShown = useSelector((state) => state.ui.isCartShown);
   const cartState = useSelector((state) => state.cart);
+  const isSubmitted = useSelector((state) => state.cart.isSubmitted);
 
   const dispatch = useDispatch();
 
@@ -74,7 +75,7 @@ function App() {
     getCartData().catch((err) => {
       console.error(err || 'Something went wrong');
     });
-  }, [dispatch]);
+  }, [dispatch, isSubmitted]);
 
   return (
     <Fragment>

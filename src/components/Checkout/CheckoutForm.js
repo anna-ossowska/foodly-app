@@ -4,9 +4,12 @@ import classes from './CheckoutForm.module.css';
 
 import { Fragment, useEffect, useState } from 'react';
 import useInput from '../../hooks/use-input';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 
 const CheckoutForm = () => {
+  // ------- SPINNER -------
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -14,7 +17,7 @@ const CheckoutForm = () => {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 0);
+    }, 1000);
 
     return () => {
       clearTimeout(timer);
@@ -24,6 +27,11 @@ const CheckoutForm = () => {
   const spinnerClasses = isLoading ? 'max-height' : 'hidden min-height';
 
   // ------- VALIDATION -------
+  const cartState = useSelector((state) => state.cart);
+  const isSubmitted = useSelector((state) => state.cart.isSubmitted);
+  console.log('cart', cartState);
+
+  const dispatch = useDispatch();
   const isNotEmpty = (value) => value.trim() !== '';
 
   const {
@@ -97,6 +105,11 @@ const CheckoutForm = () => {
     e.preventDefault();
 
     if (!isFormValid) return;
+
+    if (isFormValid) {
+      dispatch(cartActions.submitCart(true));
+    }
+
     resetNameInput();
     resetLastNameInput();
     resetEmailInput();
@@ -111,18 +124,12 @@ const CheckoutForm = () => {
   const addressErrClass = addressHasError ? 'invalid' : '';
   const phoneErrClass = phoneHasError ? 'invalid' : '';
   const zipCodeErrClass = zipCodeHasError ? 'invalid' : '';
-  console.log(
-    nameIsValid,
-    lastNameIsValid,
-    emailIsValid,
-    addressIsValid,
-    phoneIsValid,
-    zipCodeIsValid
-  );
+
   return (
     <Fragment>
-      {/* <Spinner className={spinnerClasses} /> */}
-      {!isLoading && (
+      <Spinner className={spinnerClasses} />
+      {isSubmitted && <p>Thank you for your order!</p>}
+      {!isSubmitted && !isLoading && (
         <section className={classes['form-section']}>
           <BannerCheckout />
           <form onSubmit={submitHandler} className={classes.form}>
@@ -227,11 +234,13 @@ const CheckoutForm = () => {
                 <button type="button" className="btn-outline">
                   Cancel
                 </button>
-                <Link to="/menu">
-                  <button type="submit" disabled={!isFormValid}>
-                    Submit
-                  </button>
-                </Link>
+                <button
+                  type="submit"
+                  className={'btn-secondary'}
+                  disabled={!isFormValid}
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </form>

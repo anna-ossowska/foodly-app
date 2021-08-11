@@ -2,12 +2,23 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: { items: [], totalQuantity: 0, totalPrice: 0 },
+  initialState: {
+    items: [],
+    totalQuantity: 0,
+    totalPrice: 0,
+    isSubmitted: false,
+  },
   reducers: {
     replaceCart(state, action) {
-      state.items = action.payload.items || [];
-      state.totalQuantity = action.payload.totalQuantity;
-      state.totalPrice = action.payload.totalPrice;
+      if (state.isSubmitted) {
+        state.items = [];
+        state.totalQuantity = 0;
+        state.totalPrice = 0;
+      } else {
+        state.items = action.payload.items || [];
+        state.totalQuantity = action.payload.totalQuantity;
+        state.totalPrice = action.payload.totalPrice;
+      }
 
       // Resolving Firebase calc bug
       if (state.items.length === 0) state.totalPrice = 0;
@@ -69,6 +80,9 @@ const cartSlice = createSlice({
         existingItem.quantity--;
         state.totalPrice = Math.abs(state.totalPrice - existingItem.price);
       }
+    },
+    submitCart(state, action) {
+      state.isSubmitted = action.payload;
     },
   },
 });
