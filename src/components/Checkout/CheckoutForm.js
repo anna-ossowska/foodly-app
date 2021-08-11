@@ -1,34 +1,13 @@
 import BannerCheckout from '../Layout/Header/BannerCheckout';
-import Spinner from '../UI/Spinnner';
 import classes from './CheckoutForm.module.css';
 
-import { Fragment, useEffect, useState } from 'react';
 import useInput from '../../hooks/use-input';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
-import CheckoutCompleted from './CheckoutCompleted';
 
 const CheckoutForm = () => {
-  // ------- SPINNER -------
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (!isLoading) return;
-
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [isLoading]);
-
-  const spinnerClasses = isLoading ? 'max-height' : 'hidden min-height';
-
   // ------- VALIDATION -------
   const dispatch = useDispatch();
-  const isSubmitted = useSelector((state) => state.cart.isSubmitted);
 
   const cartState = useSelector((state) => state.cart);
   console.log('cart', cartState);
@@ -147,123 +126,113 @@ const CheckoutForm = () => {
   };
 
   return (
-    <Fragment>
-      <Spinner className={spinnerClasses} />
-      {isSubmitted && <CheckoutCompleted />}
-      {!isSubmitted && !isLoading && (
-        <section className={classes['form-section']}>
-          <BannerCheckout />
-          <form onSubmit={submitHandler} className={classes.form}>
-            <div className={classes['form-container']}>
-              <div className={classes['form-control']}>
-                <label htmlFor="first-name">First Name</label>
-                <input
-                  type="text"
-                  id="first-name"
-                  onChange={nameChangeHandler}
-                  onBlur={nameBlurHandler}
-                  value={enteredName}
-                  className={generateErrClass(nameHasError)}
-                />
-                {nameHasError && (
-                  <p className={classes.err}>
-                    Field must contain letters [a-zA-Z]
-                  </p>
-                )}
-              </div>
-              <div className={classes['form-control']}>
-                <label htmlFor="last-name">Last Name</label>
-                <input
-                  type="text"
-                  id="last-name"
-                  onChange={lastNameChangeHandler}
-                  onBlur={lastNameBlurHandler}
-                  value={enteredLastName}
-                  className={generateErrClass(lastNameHasError)}
-                />
-                {lastNameHasError && (
-                  <p className={classes.err}>
-                    Field must contain letters [a-zA-Z]
-                  </p>
-                )}
-              </div>
-              <div className={classes['form-control']}>
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  onChange={emailChangeHandler}
-                  onBlur={emailBlurHandler}
-                  value={enteredEmail}
-                  className={generateErrClass(emailHasError)}
-                />
-                {emailHasError && (
-                  <p className={classes.err}>
-                    Please provide a valid e-mail address
-                  </p>
-                )}
-              </div>
-              <div className={classes['form-control']}>
-                <label htmlFor="address">Address</label>
-                <input
-                  type="text"
-                  id="address"
-                  onChange={addressChangeHandler}
-                  onBlur={addressBlurHandler}
-                  value={enteredAddress}
-                  className={generateErrClass(addressHasError)}
-                />
-                {addressHasError && (
-                  <p className={classes.err}>Please provide a valid address</p>
-                )}
-              </div>
-              <div className={classes['form-control']}>
-                <label htmlFor="zip-code">Zip Code</label>
-                <input
-                  type="text"
-                  id="zip-code"
-                  onChange={zipCodeChangeHandler}
-                  onBlur={zipCodeBlurHandler}
-                  value={enteredZipCode}
-                  className={generateErrClass(zipCodeHasError)}
-                />
-                {zipCodeHasError && (
-                  <p className={classes.err}>Field must be 4 digits long</p>
-                )}
-              </div>
-              <div className={classes['form-control']}>
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  type="text"
-                  id="phone"
-                  onChange={phoneChangeHandler}
-                  onBlur={phoneBlurHandler}
-                  value={enteredPhone}
-                  className={generateErrClass(phoneHasError)}
-                />
-                {phoneHasError && (
-                  <p className={classes.err}>
-                    Field can start with '+' sign, and must be 8-12 digits long
-                  </p>
-                )}
-              </div>
-              <div className={classes['form-actions']}>
-                <button type="button" className="btn-outline">
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className={'btn-secondary'}
-                  disabled={!isFormValid}
-                >
-                  Submit
-                </button>
-              </div>
-            </div>
-          </form>
-        </section>
-      )}
-    </Fragment>
+    <section className={classes['form-section']}>
+      <BannerCheckout />
+      <form onSubmit={submitHandler} className={classes.form}>
+        <div className={classes['form-container']}>
+          <div className={classes['form-control']}>
+            <label htmlFor="first-name">First Name</label>
+            <input
+              type="text"
+              id="first-name"
+              onChange={nameChangeHandler}
+              onBlur={nameBlurHandler}
+              value={enteredName}
+              className={generateErrClass(nameHasError)}
+            />
+            {nameHasError && (
+              <p className={classes.err}>Field must contain letters [a-zA-Z]</p>
+            )}
+          </div>
+          <div className={classes['form-control']}>
+            <label htmlFor="last-name">Last Name</label>
+            <input
+              type="text"
+              id="last-name"
+              onChange={lastNameChangeHandler}
+              onBlur={lastNameBlurHandler}
+              value={enteredLastName}
+              className={generateErrClass(lastNameHasError)}
+            />
+            {lastNameHasError && (
+              <p className={classes.err}>Field must contain letters [a-zA-Z]</p>
+            )}
+          </div>
+          <div className={classes['form-control']}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              onChange={emailChangeHandler}
+              onBlur={emailBlurHandler}
+              value={enteredEmail}
+              className={generateErrClass(emailHasError)}
+            />
+            {emailHasError && (
+              <p className={classes.err}>
+                Please provide a valid e-mail address
+              </p>
+            )}
+          </div>
+          <div className={classes['form-control']}>
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              onChange={addressChangeHandler}
+              onBlur={addressBlurHandler}
+              value={enteredAddress}
+              className={generateErrClass(addressHasError)}
+            />
+            {addressHasError && (
+              <p className={classes.err}>Please provide a valid address</p>
+            )}
+          </div>
+          <div className={classes['form-control']}>
+            <label htmlFor="zip-code">Zip Code</label>
+            <input
+              type="text"
+              id="zip-code"
+              onChange={zipCodeChangeHandler}
+              onBlur={zipCodeBlurHandler}
+              value={enteredZipCode}
+              className={generateErrClass(zipCodeHasError)}
+            />
+            {zipCodeHasError && (
+              <p className={classes.err}>Field must be 4 digits long</p>
+            )}
+          </div>
+          <div className={classes['form-control']}>
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              type="text"
+              id="phone"
+              onChange={phoneChangeHandler}
+              onBlur={phoneBlurHandler}
+              value={enteredPhone}
+              className={generateErrClass(phoneHasError)}
+            />
+            {phoneHasError && (
+              <p className={classes.err}>
+                Field can start with '+' sign, and must be 8-12 digits long
+              </p>
+            )}
+          </div>
+          <div className={classes['form-actions']}>
+            <button type="button" className="btn-outline">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className={'btn-secondary'}
+              disabled={!isFormValid}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </section>
   );
 };
 
