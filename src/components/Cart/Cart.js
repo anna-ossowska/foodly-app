@@ -3,6 +3,7 @@ import classes from './Cart.module.css';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { uiActions } from '../../store/ui-slice';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -48,7 +49,11 @@ const Cart = (props) => {
         {cartItems.length === 0 ? (
           ''
         ) : (
-          <button className="btn-secondary">Order</button>
+          <Link to="/checkout">
+            <button className="btn-secondary" onClick={hideCartHandler}>
+              Order
+            </button>
+          </Link>
         )}
       </div>
     </Modal>

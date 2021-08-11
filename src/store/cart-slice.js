@@ -24,6 +24,7 @@ const cartSlice = createSlice({
       if (state.items.length === 0) state.totalPrice = 0;
     },
     addItemToCart(state, action) {
+      state.isSubmitted = false;
       const newItem = action.payload;
 
       const existingItem = state.items.find(
