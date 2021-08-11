@@ -16,7 +16,7 @@
   border-radius: 3rem;
   overflow: hidden;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-  animation: slide-down 1.25s ease-out forwards;
+  animation: slide-down 0.8s ease-out forwards;
 }
 
 .completed-img {
@@ -56,15 +56,58 @@
 @keyframes slide-down {
   0% {
     opacity: 0;
-    transform: translateY(-10rem);
+    transform: translateY(-4rem);
   }
 
-  50% {
-    opacity: 0;
+  90% {
+    opacity: 0.8;
   }
 
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Tab-land 1200px*/
+@media only screen and (max-width: 75em) {
+  .completed-container {
+    width: 85%;
+  }
+}
+
+/* Tab-port  900px*/
+@media only screen and (max-width: 56.25em) {
+  .completed-container {
+    height: 70rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .completed-img {
+    height: 45%;
+    border-radius: 3rem 3rem 0 0;
+  }
+
+  .completed-text {
+    padding: 2rem 6rem;
+    height: 55%;
+  }
+
+  .completed-text p {
+    margin-bottom: 2.25rem;
+  }
+
+  .completed-text hr {
+    margin: 2rem 0;
+  }
+}
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  .completed-section {
+    height: 75vh;
   }
 }
