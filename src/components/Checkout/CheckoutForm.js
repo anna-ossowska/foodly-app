@@ -118,12 +118,9 @@ const CheckoutForm = () => {
     resetZipCodeInput();
   };
 
-  const nameErrClass = nameHasError ? 'invalid' : '';
-  const lastNameErrClass = lastNameHasError ? 'invalid' : '';
-  const emailErrClass = emailHasError ? 'invalid' : '';
-  const addressErrClass = addressHasError ? 'invalid' : '';
-  const phoneErrClass = phoneHasError ? 'invalid' : '';
-  const zipCodeErrClass = zipCodeHasError ? 'invalid' : '';
+  const generateErrClass = (hasError) => {
+    return hasError ? 'invalid' : '';
+  };
 
   return (
     <Fragment>
@@ -142,7 +139,7 @@ const CheckoutForm = () => {
                   onChange={nameChangeHandler}
                   onBlur={nameBlurHandler}
                   value={enteredName}
-                  className={nameErrClass}
+                  className={generateErrClass(nameHasError)}
                 />
                 {nameHasError && (
                   <p className={classes.err}>
@@ -158,7 +155,7 @@ const CheckoutForm = () => {
                   onChange={lastNameChangeHandler}
                   onBlur={lastNameBlurHandler}
                   value={enteredLastName}
-                  className={lastNameErrClass}
+                  className={generateErrClass(lastNameHasError)}
                 />
                 {lastNameHasError && (
                   <p className={classes.err}>
@@ -174,7 +171,7 @@ const CheckoutForm = () => {
                   onChange={emailChangeHandler}
                   onBlur={emailBlurHandler}
                   value={enteredEmail}
-                  className={emailErrClass}
+                  className={generateErrClass(emailHasError)}
                 />
                 {emailHasError && (
                   <p className={classes.err}>
@@ -190,7 +187,7 @@ const CheckoutForm = () => {
                   onChange={addressChangeHandler}
                   onBlur={addressBlurHandler}
                   value={enteredAddress}
-                  className={addressErrClass}
+                  className={generateErrClass(addressHasError)}
                 />
                 {addressHasError && (
                   <p className={classes.err}>
@@ -206,7 +203,7 @@ const CheckoutForm = () => {
                   onChange={zipCodeChangeHandler}
                   onBlur={zipCodeBlurHandler}
                   value={enteredZipCode}
-                  className={zipCodeErrClass}
+                  className={generateErrClass(zipCodeHasError)}
                 />
                 {zipCodeHasError && (
                   <p className={classes.err}>
@@ -222,7 +219,7 @@ const CheckoutForm = () => {
                   onChange={phoneChangeHandler}
                   onBlur={phoneBlurHandler}
                   value={enteredPhone}
-                  className={phoneErrClass}
+                  className={generateErrClass(phoneHasError)}
                 />
                 {phoneHasError && (
                   <p className={classes.err}>
