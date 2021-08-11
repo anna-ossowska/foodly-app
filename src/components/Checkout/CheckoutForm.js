@@ -6,6 +6,7 @@ import { Fragment, useEffect, useState } from 'react';
 import useInput from '../../hooks/use-input';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
+import CheckoutCompleted from './CheckoutCompleted';
 
 const CheckoutForm = () => {
   // ------- SPINNER -------
@@ -148,7 +149,7 @@ const CheckoutForm = () => {
   return (
     <Fragment>
       <Spinner className={spinnerClasses} />
-      {isSubmitted && <p>Thank you for your order!</p>}
+      {isSubmitted && <CheckoutCompleted />}
       {!isSubmitted && !isLoading && (
         <section className={classes['form-section']}>
           <BannerCheckout />
