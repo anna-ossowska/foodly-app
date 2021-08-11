@@ -9,7 +9,6 @@ import { cartActions } from '../../store/cart-slice';
 
 const CheckoutForm = () => {
   // ------- SPINNER -------
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -27,12 +26,36 @@ const CheckoutForm = () => {
   const spinnerClasses = isLoading ? 'max-height' : 'hidden min-height';
 
   // ------- VALIDATION -------
-  const cartState = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   const isSubmitted = useSelector((state) => state.cart.isSubmitted);
+
+  const cartState = useSelector((state) => state.cart);
   console.log('cart', cartState);
 
-  const dispatch = useDispatch();
-  const isNotEmpty = (value) => value.trim() !== '';
+  const isNameValid = (value) => {
+    const regex = /^[a-z ,.'-]+$/i;
+    return regex.test(value);
+  };
+
+  const isEmailValid = (value) => {
+    const regex = /^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}/g;
+    return regex.test(value);
+  };
+
+  const isAddressValid = (value) => {
+    const regex = /^[#.0-9a-zA-Z\s,-]+$/;
+    return regex.test(value);
+  };
+
+  const isZipCodeValid = (value) => {
+    const regex = /^\d{4}$/;
+    return regex.test(value);
+  };
+
+  const isPhoneValid = (value) => {
+    const regex = /^(\+)?[0-9]{8,12}$/;
+    return regex.test(value);
+  };
 
   const {
     enteredValue: enteredName,
@@ -41,7 +64,7 @@ const CheckoutForm = () => {
     isValid: nameIsValid,
     hasError: nameHasError,
     resetInput: resetNameInput,
-  } = useInput(isNotEmpty);
+  } = useInput(isNameValid);
 
   const {
     enteredValue: enteredLastName,
@@ -50,7 +73,7 @@ const CheckoutForm = () => {
     isValid: lastNameIsValid,
     hasError: lastNameHasError,
     resetInput: resetLastNameInput,
-  } = useInput(isNotEmpty);
+  } = useInput(isNameValid);
 
   const {
     enteredValue: enteredEmail,
@@ -59,7 +82,7 @@ const CheckoutForm = () => {
     isValid: emailIsValid,
     hasError: emailHasError,
     resetInput: resetEmailInput,
-  } = useInput(isNotEmpty);
+  } = useInput(isEmailValid);
 
   const {
     enteredValue: enteredAddress,
@@ -68,16 +91,7 @@ const CheckoutForm = () => {
     isValid: addressIsValid,
     hasError: addressHasError,
     resetInput: resetAddressInput,
-  } = useInput(isNotEmpty);
-
-  const {
-    enteredValue: enteredPhone,
-    valueChangeHandler: phoneChangeHandler,
-    valueBlurHandler: phoneBlurHandler,
-    isValid: phoneIsValid,
-    hasError: phoneHasError,
-    resetInput: resetPhoneInput,
-  } = useInput(isNotEmpty);
+  } = useInput(isAddressValid);
 
   const {
     enteredValue: enteredZipCode,
@@ -86,7 +100,16 @@ const CheckoutForm = () => {
     isValid: zipCodeIsValid,
     hasError: zipCodeHasError,
     resetInput: resetZipCodeInput,
-  } = useInput(isNotEmpty);
+  } = useInput(isZipCodeValid);
+
+  const {
+    enteredValue: enteredPhone,
+    valueChangeHandler: phoneChangeHandler,
+    valueBlurHandler: phoneBlurHandler,
+    isValid: phoneIsValid,
+    hasError: phoneHasError,
+    resetInput: resetPhoneInput,
+  } = useInput(isPhoneValid);
 
   let isFormValid = false;
   if (
@@ -143,7 +166,7 @@ const CheckoutForm = () => {
                 />
                 {nameHasError && (
                   <p className={classes.err}>
-                    Field cannot be empty and must contain characters
+                    Field must contain letters [a-zA-Z]
                   </p>
                 )}
               </div>
@@ -159,7 +182,7 @@ const CheckoutForm = () => {
                 />
                 {lastNameHasError && (
                   <p className={classes.err}>
-                    Field cannot be empty and must contain characters
+                    Field must contain letters [a-zA-Z]
                   </p>
                 )}
               </div>
@@ -175,7 +198,7 @@ const CheckoutForm = () => {
                 />
                 {emailHasError && (
                   <p className={classes.err}>
-                    Field cannot be empty and must contain characters
+                    Please provide a valid e-mail address
                   </p>
                 )}
               </div>
@@ -190,9 +213,7 @@ const CheckoutForm = () => {
                   className={generateErrClass(addressHasError)}
                 />
                 {addressHasError && (
-                  <p className={classes.err}>
-                    Field cannot be empty and must contain characters
-                  </p>
+                  <p className={classes.err}>Please provide a valid address</p>
                 )}
               </div>
               <div className={classes['form-control']}>
@@ -206,9 +227,7 @@ const CheckoutForm = () => {
                   className={generateErrClass(zipCodeHasError)}
                 />
                 {zipCodeHasError && (
-                  <p className={classes.err}>
-                    Field cannot be empty and must contain characters
-                  </p>
+                  <p className={classes.err}>Field must be 4 digits long</p>
                 )}
               </div>
               <div className={classes['form-control']}>
@@ -223,7 +242,7 @@ const CheckoutForm = () => {
                 />
                 {phoneHasError && (
                   <p className={classes.err}>
-                    Field cannot be empty and must contain characters
+                    Field can start with '+' sign, and must be 8-12 digits long
                   </p>
                 )}
               </div>
