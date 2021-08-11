@@ -16,6 +16,7 @@
   border-radius: 3rem;
   overflow: hidden;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
+  animation: slide-down 1.25s ease-out forwards;
 }
 
 .completed-img {
@@ -50,4 +51,20 @@
   background-color: var(--color-grey-dark-1);
   height: 3px;
   border: none;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

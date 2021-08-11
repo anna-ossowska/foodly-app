@@ -10,6 +10,7 @@ const Checkout = () => {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  // ------- SPINNER -------
   useEffect(() => {
     if (!isLoading) return;
 
@@ -21,6 +22,10 @@ const Checkout = () => {
       clearTimeout(timer);
     };
   }, [isLoading]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [isSubmitted]);
 
   const spinnerClasses = isLoading ? 'max-height' : 'hidden min-height';
   return (

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import classes from './CheckoutCompleted.module.css';
 
-const CheckoutCompleted = () => {
+const CheckoutCompleted = (props) => {
   return (
-    <section className={classes['completed-section']}>
+    <section className={`${props.className} ${classes['completed-section']}`}>
       <div className={classes['completed-container']}>
         <div className={classes['completed-img']}></div>
 
