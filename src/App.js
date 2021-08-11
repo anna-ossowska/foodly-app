@@ -79,9 +79,9 @@ function App() {
 
   return (
     <Fragment>
+      <Header onClick={showCartHandler} />
+      {isCartShown && <Cart />}
       <Layout>
-        <Header onClick={showCartHandler} />
-        {isCartShown && <Cart />}
         <Switch>
           <Route path="/" exact>
             <Redirect to="/home" />
