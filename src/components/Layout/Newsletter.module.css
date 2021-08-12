@@ -70,3 +70,45 @@
 .newsletter-control button:hover {
   transform: translate(0);
 }
+
+/* Big desktop  1800px*/
+@media only screen and (min-width: 112.5em) {
+  .newsletter-container {
+    width: 35%;
+  }
+}
+/* Tab-land  1200px*/
+@media only screen and (max-width: 75em) {
+  .newsletter-container {
+    width: 70%;
+  }
+
+  .newsletter-section {
+    height: 50vh;
+  }
+}
+
+/* Tab-port  900px*/
+@media only screen and (max-width: 56.25em) {
+  .newsletter-container {
+    width: 80%;
+  }
+}
+
+/* Landscape */
+@media (max-height: 500px) {
+  .newsletter-section {
+    height: 100vh;
+  }
+}
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  .newsletter-section {
+    height: 45vh;
+  }
+
+  .newsletter-container {
+    width: 90%;
+  }
+}
