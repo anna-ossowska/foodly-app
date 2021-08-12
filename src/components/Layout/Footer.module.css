@@ -74,6 +74,21 @@
   }
 }
 
+/* Landscape 500px*/
+@media (max-height: 31.25em) {
+  .footer {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr 2fr;
+    width: 100%;
+    padding: 6rem 2rem 6rem 6rem;
+  }
+
+  .footer-other {
+    width: 40rem;
+  }
+}
+
 /* Phone  600px*/
 @media only screen and (max-width: 37.5em) {
   .footer {

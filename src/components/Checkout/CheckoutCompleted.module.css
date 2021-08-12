@@ -109,6 +109,13 @@
   }
 }
 
+/* Landscape 500px*/
+@media (max-height: 31.25em) {
+  .completed-section {
+    height: 90rem;
+  }
+}
+
 /* Phone  600px*/
 @media only screen and (max-width: 37.5em) {
   .completed-section {
