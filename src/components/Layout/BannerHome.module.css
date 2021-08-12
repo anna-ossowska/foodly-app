@@ -91,6 +91,13 @@
   }
 }
 
+/* Landscape */
+@media (max-height: 500px) {
+  .banner-section {
+    height: 100vh;
+  }
+}
+
 /* Phone  600px*/
 @media only screen and (max-width: 37.5em) {
   .banner-section {
