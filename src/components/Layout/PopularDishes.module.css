@@ -81,3 +81,45 @@
   justify-content: center;
   margin: 5rem 0 8rem;
 }
+
+/* Big desktop 1800px */
+@media only screen and (min-width: 112.5em) {
+  .poular-container {
+    max-width: 62%;
+  }
+}
+
+@media only screen and (max-width: 85em) {
+  .popular-section {
+    height: 100%;
+  }
+
+  .poular-header {
+    margin-bottom: 5rem;
+    margin-top: 0;
+  }
+
+  .poular-container {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    width: 40%;
+  }
+
+  .dish-card .info {
+    padding: 3rem 3rem 3rem 5rem;
+  }
+}
+
+/* Tab-port  900px*/
+@media only screen and (max-width: 56.25em) {
+  .poular-container {
+    width: 45%;
+  }
+}
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  .poular-container {
+    width: 65%;
+  }
+}
