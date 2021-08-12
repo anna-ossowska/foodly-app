@@ -34,7 +34,7 @@
   padding: 0 0 0.5rem;
   font-weight: 500;
   font-size: 1.6rem;
-  color: var(--color-grey-light-3);
+  color: var(--color-grey-dark-3);
 }
 
 .form-control input {

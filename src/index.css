@@ -13,6 +13,7 @@
 
   --color-grey-light-1: #f4f4f4;
   --color-grey-light-2: #d8d8d8;
+  --color-grey-light-3: #f8f8f8;
 
   --color-white: #fff;
   --color-black: #000;
@@ -81,6 +82,11 @@ a {
 
 ul {
   list-style: none;
+}
+
+.logo {
+  margin-top: 1rem;
+  height: 4.1rem;
 }
 
 .btn-main:link,

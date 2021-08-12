@@ -1,5 +1,5 @@
 .popular-section {
-  background-color: var(--color-green-light-1);
+  background-color: var(--color-grey-light-3);
   height: 100vh;
   margin: 0 auto;
   padding-top: 8rem;
@@ -40,6 +40,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.25s ease-in;
+}
+
+.dish-card:hover {
+  transform: scale(1.03);
 }
 
 .dish-card img {

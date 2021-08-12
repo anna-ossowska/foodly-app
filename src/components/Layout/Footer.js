@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className={classes['footer']}>
       <div className={classes['footer-info']}>
         <div className={classes['footer-logo']}>
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" className="logo" />
         </div>
         <p>Espelundsveien 130</p>
         <p>Kristiansand 4630 Norway</p>

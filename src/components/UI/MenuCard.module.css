@@ -6,7 +6,7 @@
   padding: 8rem 11rem;
   border-radius: 3rem 3rem 0 0;
   box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.15);
-  animation: fade 1s ease-out forwards;
+  animation: fade 0.4s ease-out forwards;
 }
 
 .menu-card li {
