@@ -12,7 +12,7 @@ const NewsLetter = () => {
         <form>
           <div className={classes['newsletter-control']}>
             <input type="email" placeholder="Enter your email" />
-            <button className={classes['btn-main']}>Submit</button>
+            <button className={'btn-main'}>Submit</button>
           </div>
         </form>
       </div>
