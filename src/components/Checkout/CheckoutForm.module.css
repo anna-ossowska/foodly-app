@@ -17,7 +17,6 @@
 }
 
 .form-container {
-  /* border: var(--color-grey-light-3) 1px solid; */
   box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.15);
   border-radius: 1.5rem;
   padding: 6rem 8rem;
@@ -43,8 +42,7 @@
   border-radius: 0.5rem;
   border: 0.75px solid var(--color-grey-dark-3);
   font-size: 1.5rem;
-  /* add to globals */
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   transition: border 0.1s ease-in;
 }
 

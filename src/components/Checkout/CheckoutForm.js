@@ -1,4 +1,4 @@
-import BannerCheckout from '../Layout/BannerCheckout';
+import BannerCheckout from '../Layout/Banners/BannerCheckout';
 import classes from './CheckoutForm.module.css';
 
 import useInput from '../../hooks/use-input';

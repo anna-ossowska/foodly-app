@@ -8,7 +8,7 @@
 }
 
 .banner-home {
-  background: url('../../images/banner-home.png');
+  background: url('../../../images/banner-home.png');
   background-position: 75%;
   background-size: 115rem;
   background-repeat: no-repeat;
@@ -110,7 +110,7 @@
     overflow: hidden;
   }
   .banner-home {
-    background: url('../../images/banner-home-xs.png');
+    background: url('../../../images/banner-home-xs.png');
     background-position: 75%;
     background-size: 100rem;
     background-repeat: no-repeat;

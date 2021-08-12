@@ -2,6 +2,7 @@ import classes from './PopularDishes.module.css';
 import dish1Image from '../../images/dish-1.jpg';
 import dish2Image from '../../images/dish-2.jpg';
 import dish3Image from '../../images/dish-3.jpg';
+import { Link } from 'react-router-dom';
 
 const PopularDishes = () => {
   return (
@@ -47,9 +48,11 @@ const PopularDishes = () => {
         </div>
       </div>
       <div className={classes['popular-actions']}>
-        <button type="button" className={'btn-section'}>
-          Learn more
-        </button>
+        <Link to="/menu">
+          <button type="button" className={'btn-section'}>
+            Learn more
+          </button>
+        </Link>
       </div>
     </section>
   );
