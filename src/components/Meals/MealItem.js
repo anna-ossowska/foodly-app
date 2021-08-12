@@ -48,9 +48,18 @@ const MealItem = (props) => {
 
   const notifClasses = isNotifVisible ? '' : 'hidden';
 
+  const message = (
+    <Fragment>
+      <p>
+        <span>{props.title}</span>&nbsp; has been successfully added to your
+        cart!
+      </p>
+    </Fragment>
+  );
+
   return (
     <Fragment>
-      <Notification title={title} className={notifClasses} />
+      <Notification msg={message} className={notifClasses} />
       <li>
         <div className={classes['meal-info']}>
           <h4 className={classes['meal-title']}>

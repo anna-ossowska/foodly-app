@@ -2,7 +2,7 @@ import classes from './Newsletter.module.css';
 import { Fragment, useRef, useState, useEffect } from 'react';
 import Notification from '../UI/Notification';
 
-const NewsLetter = (props) => {
+const NewsLetter = () => {
   const inputRef = useRef();
   const [msg, setMsg] = useState('');
   const [isEmailSubmitted, setIsEmailSubmitted] = useState(false);
@@ -20,10 +20,17 @@ const NewsLetter = (props) => {
     const isValid = isEmailValid(inputRef.current.value);
 
     if (!isValid) {
-      setMsg('Please enter a valid email address.');
+      setMsg(
+        <Fragment>
+          Please enter a <span>valid</span> email address.
+        </Fragment>
+      );
     } else {
       setMsg(
-        'Thank you for your subscription! You will receive the confirmation email shortly.'
+        <Fragment>
+          <span>Thank you for your subscription!</span> You will receive the
+          confirmation email shortly.
+        </Fragment>
       );
     }
   };
@@ -47,7 +54,7 @@ const NewsLetter = (props) => {
 
   return (
     <Fragment>
-      <Notification message={msg} className={notifClasses} />
+      <Notification msg={msg} className={notifClasses} />
       <section className={classes['newsletter-section']}>
         <div className={classes['newsletter-container']}>
           <h4>
