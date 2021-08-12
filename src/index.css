@@ -5,7 +5,7 @@
 
   --color-green-dark-1: #2e3832;
   --color-green-dark-2: #32601c;
-  --color-green-light-1: #f6fbf7;
+  --color-green-light-1: #f8fff9;
 
   --color-grey-dark-1: #222925;
   --color-grey-dark-2: #4b4d4b;
@@ -57,7 +57,7 @@ body {
   font-weight: 300;
   line-height: 1.6;
   color: var(--color-grey-dark-2);
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
 }
 
 h1,

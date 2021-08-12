@@ -1,6 +1,10 @@
 .completed-section {
   height: 100vh;
-  background-color: var(--color-grey-light-1);
+  background: linear-gradient(
+    360deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(247, 247, 247, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;

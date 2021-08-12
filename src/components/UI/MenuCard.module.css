@@ -5,7 +5,8 @@
   background-color: var(--color-white);
   padding: 8rem 11rem;
   border-radius: 3rem 3rem 0 0;
-  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1rem 6rem rgba(0, 0, 0, 0.15);
+  animation: slide-up 0.8s ease-out forwards;
 }
 
 .menu-card li {
@@ -20,9 +21,24 @@
 .menu-card hr {
   width: 6rem;
   margin: 1.5rem 0;
-
   background-color: var(--color-grey-dark-1);
   height: 3px;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Tab-land 1200px*/

@@ -18,6 +18,7 @@ const cartSlice = createSlice({
         state.items = action.payload.items || [];
         state.totalQuantity = action.payload.totalQuantity;
         state.totalPrice = action.payload.totalPrice;
+        state.isSubmitted = false;
       }
 
       // Resolving Firebase calc bug
