@@ -83,7 +83,6 @@ ul {
   list-style: none;
 }
 
-/* Button */
 .btn-main:link,
 .btn-main:visited,
 .btn-main,
@@ -105,6 +104,7 @@ ul {
   transition: all 0.2s ease-in;
 }
 
+/* Main */
 .btn-main {
   background: linear-gradient(
     180deg,
@@ -239,6 +239,46 @@ ul {
 }
 
 .btn-section:hover {
+  background-color: #303633;
+}
+
+/* Banner */
+.btn-banner:link,
+.btn-banner:visited,
+.btn-banner {
+  all: unset;
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: 2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 20rem;
+  transition: all 0.2s ease-in;
+}
+
+.btn-banner {
+  background: linear-gradient(
+    180deg,
+    rgba(86, 88, 87, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.btn-banner:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-banner:active,
+.btn-banner:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-banner {
+  background-color: var(--color-grey-dark-1);
+}
+
+.btn-banner:hover {
   background-color: #303633;
 }
 
