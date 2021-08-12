@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const uiSlice = createSlice({
   name: 'ui',
-  initialState: { isCartShown: false },
+  initialState: { isCartShown: false, isNotifShown: false },
   reducers: {
     showCart(state) {
       state.isCartShown = true;

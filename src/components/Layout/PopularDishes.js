@@ -13,7 +13,7 @@ const PopularDishes = () => {
       </div>
       <div className={classes['poular-container']}>
         <div className={classes['dish-card']}>
-          <img src={dish1Image} alt="" />
+          <img src={dish1Image} alt="dish" />
           <div className={classes.info}>
             <h4 className={classes.title}>
               Pumpkin Ginger Soup
@@ -24,7 +24,7 @@ const PopularDishes = () => {
           </div>
         </div>
         <div className={classes['dish-card']}>
-          <img src={dish2Image} alt="" />
+          <img src={dish2Image} alt="dish" />
 
           <div className={classes.info}>
             <h4 className={classes.title}>
@@ -36,7 +36,7 @@ const PopularDishes = () => {
           </div>
         </div>
         <div className={classes['dish-card']}>
-          <img src={dish3Image} alt="" />
+          <img src={dish3Image} alt="dish" />
           <div className={classes.info}>
             <h4 className={classes.title}>
               Pumpkin Ginger Soup
