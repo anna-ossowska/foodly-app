@@ -19,3 +19,10 @@
     position: relative;
   }
 }
+
+/* Landscape 500px*/
+@media (max-height: 31.25em) {
+  .banner-img {
+    height: 60vh;
+  }
+}

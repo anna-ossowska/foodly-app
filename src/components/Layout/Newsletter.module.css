@@ -95,8 +95,8 @@
   }
 }
 
-/* Landscape */
-@media (max-height: 500px) {
+/* Landscape 500px*/
+@media (max-height: 31.25em) {
   .newsletter-section {
     height: 100vh;
   }
