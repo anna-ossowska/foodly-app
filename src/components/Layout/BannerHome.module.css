@@ -34,5 +34,96 @@
 .banner-home-text p {
   font-size: 2.25rem;
   margin-bottom: 2.75rem;
-  /* text-align: justify; */
+}
+
+/* Big desktop 1800px */
+@media only screen and (min-width: 112.5em) {
+  .banner-home {
+    background-position: 60%;
+    background-size: 120rem;
+  }
+
+  .banner-home-text {
+    left: 40%;
+    width: 70rem;
+  }
+
+  .banner-home-text h2 {
+    font-size: 4.75rem;
+  }
+}
+
+/* Tab-land 1440px*/
+@media only screen and (max-width: 90em) {
+  .banner-section {
+    height: 80vh;
+  }
+
+  .banner-home {
+    background-position: 79%;
+    background-size: 85rem;
+  }
+
+  .banner-home-text {
+    left: 30%;
+  }
+
+  .banner-home-text p {
+    font-size: 2.1rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+/* Tab-port  900px*/
+@media only screen and (max-width: 56.25em) {
+  .banner-home {
+    background-position: 79%;
+    background-size: 70rem;
+  }
+
+  .banner-home-text {
+    left: 30%;
+  }
+
+  .banner-home-text h2 {
+    font-size: 4.75rem;
+  }
+}
+
+/* Phone  600px*/
+@media only screen and (max-width: 37.5em) {
+  .banner-section {
+    height: 60vh;
+    background: linear-gradient(
+      360deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgb(240, 253, 242) 100%
+    );
+    overflow: hidden;
+  }
+  .banner-home {
+    background: url('../../images/banner-home-xs.png');
+    background-position: 75%;
+    background-size: 100rem;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+
+  .banner-home-text {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    width: 45%;
+    transform: translate(-50%, -50%);
+  }
+
+  .banner-home-text h2 {
+    font-size: 4rem;
+  }
+
+  .banner-home-text p {
+    font-size: 2rem;
+    margin-bottom: 2.75rem;
+  }
 }
