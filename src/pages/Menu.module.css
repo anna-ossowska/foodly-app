@@ -17,7 +17,7 @@
   }
 }
 
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 90em) {
   .menu-grid {
     display: block;
     margin-bottom: 0;

@@ -45,8 +45,7 @@
   }
 }
 
-/* Tab-land 1200px*/
-@media only screen and (max-width: 75em) {
+@media only screen and (max-width: 90em) {
   .menu-card {
     display: block;
     position: relative;

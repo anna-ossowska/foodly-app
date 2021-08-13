@@ -13,7 +13,7 @@ const Header = (props) => {
     <header>
       <nav className={classes.navigation}>
         <div className={classes.logo}>
-          <img src={logo} alt="logo" className="logo" />
+          <img src={logo} alt="logo" className={classes['header-logo']} />
         </div>
         <ul>
           <NavLink to="/home">
