@@ -44,7 +44,7 @@
 }
 
 .dish-card:hover {
-  transform: scale(1.03);
+  transform: scale(1.013);
 }
 
 .dish-card img {
@@ -52,6 +52,18 @@
   height: 65%;
   object-fit: cover;
   border-radius: 3rem 3rem 0 0;
+  position: relative;
+}
+
+img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
 }
 
 .dish-card .info {

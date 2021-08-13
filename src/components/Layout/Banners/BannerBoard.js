@@ -10,8 +10,8 @@ const BannerBoard = () => {
       </h3>
       <hr />
       <p>
-        Choose your favorite meal from our broad selection of available meals
-        and enjoy a delicious lunch or dinner at home.
+        Choose your favorite meal from our broad selection, and enjoy a
+        delicious lunch or dinner at home.
       </p>
     </div>
   );
