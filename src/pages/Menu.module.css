@@ -13,6 +13,6 @@
 @media only screen and (max-width: 75em) {
   .menu-grid {
     display: block;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
   }
 }
