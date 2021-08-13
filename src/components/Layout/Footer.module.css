@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 0.5fr 2fr;
   grid-gap: 3rem;
-  width: 90%;
+  max-width: 150rem;
   margin: 0 auto;
   background-color: var(--color-green-light-1);
   padding: 7rem 22rem 7rem 33rem;
@@ -43,6 +43,13 @@
   text-align: center;
   padding: 0.75rem 0.5rem;
   box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
+}
+
+/* Big desktop 1800px */
+@media only screen and (min-width: 112.5em) {
+  .footer {
+    max-width: 200rem;
+  }
 }
 
 /* Tab-land 1200px*/

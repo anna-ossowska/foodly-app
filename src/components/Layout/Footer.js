@@ -23,11 +23,11 @@ const Footer = () => {
         </ul>
         <ul>
           <li>
-            <strong>Helpful links</strong>
+            <strong>Policy</strong>
           </li>
           <li>Service</li>
           <li>Privacy</li>
-          <li>Consitions</li>
+          <li>Conditions</li>
         </ul>
         <ul>
           <li>

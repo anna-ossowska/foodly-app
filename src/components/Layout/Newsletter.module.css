@@ -75,7 +75,7 @@
 /* Big desktop  1800px*/
 @media only screen and (min-width: 112.5em) {
   .newsletter-container {
-    width: 35%;
+    max-width: 90rem;
   }
 }
 /* Tab-land  1200px*/

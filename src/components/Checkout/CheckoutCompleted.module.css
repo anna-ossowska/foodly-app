@@ -12,7 +12,7 @@
 
 .completed-container {
   height: 50rem;
-  width: 60%;
+  max-width: 90rem;
   margin: 0 auto;
   background-color: var(--color-green-light-1);
   display: grid;
@@ -73,10 +73,17 @@
   }
 }
 
+/* Big desktop 1800px */
+@media only screen and (min-width: 112.5em) {
+  .completed-container {
+    max-width: 120rem;
+  }
+}
+
 /* Tab-land 1200px*/
 @media only screen and (max-width: 75em) {
   .completed-container {
-    width: 85%;
+    max-width: 85rem;
   }
 }
 
@@ -84,7 +91,7 @@
 @media only screen and (max-width: 56.25em) {
   .completed-container {
     height: 70rem;
-    width: 60%;
+    max-width: 60rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

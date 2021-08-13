@@ -39,12 +39,12 @@
 /* Big desktop 1800px */
 @media only screen and (min-width: 112.5em) {
   .banner-home {
-    background-position: 60%;
+    background-position: 56%;
     background-size: 130rem;
   }
 
   .banner-home-text {
-    left: 40%;
+    left: 36%;
     width: 60rem;
   }
 

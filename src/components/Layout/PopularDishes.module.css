@@ -41,7 +41,7 @@
 /* Big desktop 1800px */
 @media only screen and (min-width: 112.5em) {
   .poular-container {
-    max-width: 62%;
+    max-width: 160rem;
   }
 }
 
