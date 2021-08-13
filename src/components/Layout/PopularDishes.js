@@ -16,6 +16,7 @@ const PopularDishes = () => {
         {filteredItems.map((item) => {
           return (
             <PopularDish
+              key={item.id}
               title={item.title}
               shortDescription={item.shortDescription}
               price={item.price}

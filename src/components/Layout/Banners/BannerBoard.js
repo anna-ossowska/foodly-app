@@ -3,6 +3,8 @@ import classes from './BannerBoard.module.css';
 const BannerBoard = () => {
   return (
     <div className={classes['banner-board']}>
+      <div className={classes['circle-1']}>&nbsp;</div>
+      <div className={classes['circle-2']}>&nbsp;</div>
       <h3>
         Hungry?
         <br />

@@ -38,6 +38,13 @@
   }
 }
 
+/* Big desktop */
+@media only screen and (min-width: 130em) {
+  .menu-card {
+    grid-column: 5 / span 4;
+  }
+}
+
 /* Tab-land 1200px*/
 @media only screen and (max-width: 75em) {
   .menu-card {
