@@ -63,8 +63,8 @@ const MealItem = (props) => {
       <li>
         <div className={classes['meal-info']}>
           <h4 className={classes['meal-title']}>
-            {title} &nbsp;&nbsp;&nbsp;
-            <span className={classes['meal-price']}>${price}</span>
+            {title}
+            <p className={classes['meal-price']}>${price}</p>
           </h4>
           <hr />
           <p className={classes['meal-description']}>{description}</p>
