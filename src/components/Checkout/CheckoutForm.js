@@ -169,9 +169,7 @@ const CheckoutForm = () => {
               className={generateErrClass(emailHasError)}
             />
             {emailHasError && (
-              <p className={classes.err}>
-                Please provide a valid e-mail address
-              </p>
+              <p className={classes.err}>Please enter a valid e-mail address</p>
             )}
           </div>
           <div className={classes['form-control']}>
@@ -185,7 +183,7 @@ const CheckoutForm = () => {
               className={generateErrClass(addressHasError)}
             />
             {addressHasError && (
-              <p className={classes.err}>Please provide a valid address</p>
+              <p className={classes.err}>Please enter a valid address</p>
             )}
           </div>
           <div className={classes['form-control']}>

@@ -10,7 +10,7 @@
 .banner-home {
   background: url('../../../images/banner-home.png');
   background-position: 75%;
-  background-size: 115rem;
+  background-size: 125rem;
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
@@ -21,7 +21,7 @@
   position: absolute;
   top: 50%;
   left: 33%;
-  width: 40%;
+  width: 35%;
   transform: translate(-50%, -50%);
 }
 
@@ -40,12 +40,12 @@
 @media only screen and (min-width: 112.5em) {
   .banner-home {
     background-position: 60%;
-    background-size: 120rem;
+    background-size: 130rem;
   }
 
   .banner-home-text {
     left: 40%;
-    width: 70rem;
+    width: 60rem;
   }
 
   .banner-home-text h2 {
@@ -70,8 +70,6 @@
 
   .banner-home-text p {
     font-size: 2.1rem;
-    text-align: justify;
-    hyphens: auto;
   }
 }
 
@@ -132,5 +130,7 @@
   .banner-home-text p {
     font-size: 2rem;
     margin-bottom: 2.75rem;
+    text-align: justify;
+    hyphens: auto;
   }
 }

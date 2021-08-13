@@ -11,8 +11,8 @@ const CheckoutCompleted = (props) => {
           <h3>Thank you!</h3>
           <hr />
           <p>
-            Your order was completed successfully. You should receive an email
-            with payment instructions shortly.
+            Your order was completed successfully. You should soon receive an
+            email with payment instructions.
           </p>
           <div className={classes['completed-actions']}>
             <Link to="/menu">

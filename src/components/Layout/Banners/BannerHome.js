@@ -1,4 +1,5 @@
 import classes from './BannerHome.module.css';
+import { Link } from 'react-router-dom';
 
 const BannerHome = () => {
   return (
@@ -11,11 +12,12 @@ const BannerHome = () => {
             for healthier future
           </h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere
-            ratione vero totam natus eveniet consectetur esse, minima odit
-            numquam quae!
+            All our meals are created with the highest quality ingredients and
+            are freshly prepared by chefs, with no preservatives.
           </p>
-          <button className="btn-banner">Get started</button>
+          <Link to="/menu">
+            <button className="btn-banner">Get started</button>
+          </Link>
         </div>
       </div>
     </section>

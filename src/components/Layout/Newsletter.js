@@ -21,16 +21,16 @@ const NewsLetter = () => {
 
     if (!isValid) {
       setMsg(
-        <Fragment>
+        <p>
           Please enter a <span>valid</span> email address.
-        </Fragment>
+        </p>
       );
     } else {
       setMsg(
-        <Fragment>
+        <p>
           <span>Thank you for your subscription!</span> You will receive the
           confirmation email shortly.
-        </Fragment>
+        </p>
       );
     }
   };
