@@ -1,13 +1,10 @@
-import { Fragment, useEffect } from 'react';
+import React from 'react';
+import { Fragment, useEffect, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import Footer from './components/Layout/Footer';
-import Menu from './pages/Menu';
 import Home from './pages/Home';
-import Checkout from './components/Checkout/Checkout';
-import NotFound from './pages/NotFound';
-
 import Header from './components/Layout/Header/Header';
 import Cart from './components/Cart/Cart';
 
@@ -15,6 +12,11 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { uiActions } from './store/ui-slice';
 import { cartActions } from './store/cart-slice';
+
+// --------- LAZY LOADING ----------
+const Menu = React.lazy(() => import('./pages/Menu'));
+const Checkout = React.lazy(() => import('./components/Checkout/Checkout'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 let isInitial = true;
 
@@ -82,26 +84,28 @@ function App() {
       <Header onClick={showCartHandler} />
       {isCartShown && <Cart />}
       <Layout>
-        <Switch>
-          <Route path="/" exact>
-            <Redirect to="/home" />
-          </Route>
-          <Route path="/home" exact>
-            <Home />
-          </Route>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Switch>
+            <Route path="/" exact>
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home" exact>
+              <Home />
+            </Route>
 
-          <Route path="/menu">
-            <Menu />
-          </Route>
+            <Route path="/menu">
+              <Menu />
+            </Route>
 
-          <Route path="/checkout">
-            <Checkout />
-          </Route>
+            <Route path="/checkout">
+              <Checkout />
+            </Route>
 
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </Suspense>
       </Layout>
       <Footer />
     </Fragment>
