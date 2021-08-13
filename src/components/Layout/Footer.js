@@ -18,7 +18,7 @@ const Footer = () => {
             <strong>Information</strong>
           </li>
           <li>About Us</li>
-          <li>More Search</li>
+          <li>Search</li>
           <li>Testimonials</li>
         </ul>
         <ul>
@@ -31,11 +31,11 @@ const Footer = () => {
         </ul>
         <ul>
           <li>
-            <strong>Our Clients</strong>
+            <strong>Clients</strong>
           </li>
           <li>Events</li>
           <li>Memebership</li>
-          <li>Special Offer</li>
+          <li>Offer</li>
         </ul>
       </div>
     </footer>
