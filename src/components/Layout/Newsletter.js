@@ -65,7 +65,7 @@ const NewsLetter = () => {
           <form onSubmit={submitHandler}>
             <div className={classes['newsletter-control']}>
               <input placeholder="Enter your email" ref={inputRef} />
-              <button type="submit" className={'btn-main'}>
+              <button type="submit" className={'btn-newsletter'}>
                 Submit
               </button>
             </div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Fragment, useEffect, Suspense } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import Footer from './components/Layout/Footer';
-import Home from './pages/Home';
+import BannerHome from './components/Layout/Banners/BannerHome';
+import PopularDishes from './components/Layout/PopularDishes';
+import NewsLetter from './components/Layout/Newsletter';
 import Header from './components/Layout/Header/Header';
 import Cart from './components/Cart/Cart';
 
@@ -87,11 +89,9 @@ function App() {
         <Suspense fallback={<p>Loading...</p>}>
           <Switch>
             <Route path="/" exact>
-              <Redirect to="/home" />
-            </Route>
-
-            <Route path="/home" exact>
-              <Home />
+              <BannerHome />
+              <PopularDishes />
+              <NewsLetter />
             </Route>
 
             <Route path="/menu">

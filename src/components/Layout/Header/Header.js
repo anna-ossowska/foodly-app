@@ -16,7 +16,7 @@ const Header = (props) => {
           <img src={logo} alt="logo" className={classes['header-logo']} />
         </div>
         <ul>
-          <NavLink to="/home">
+          <NavLink to="/">
             <HeaderHomeButton />
           </NavLink>
 

@@ -61,16 +61,11 @@
 
 .newsletter-control button {
   position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(-12%, -50%);
+  top: 13%;
+  right: 3%;
   z-index: 3;
   font-size: 1.25rem;
   padding: 0.4rem 1.65rem;
-}
-
-.newsletter-control button:hover {
-  transform: translate(0);
 }
 
 /* Big desktop  1800px*/
@@ -116,5 +111,10 @@
 
   .newsletter-control input {
     height: 4.5rem;
+  }
+
+  .newsletter-control button {
+    top: 20%;
+    right: 4%;
   }
 }

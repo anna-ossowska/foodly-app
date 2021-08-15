@@ -105,7 +105,10 @@ input:focus {
 .btn-add,
 .btn-outline:link,
 .btn-outline:visited,
-.btn-outline {
+.btn-outline,
+.btn-newsletter:link,
+.btn-newsletter:visited,
+.btn-newsletter {
   all: unset;
   cursor: pointer;
   color: var(--color-white);
@@ -155,14 +158,6 @@ input:focus {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.btn-secondary {
-  background-color: var(--color-grey-dark-1);
-}
-
-.btn-secondary:hover {
-  background-color: #303633;
-}
-
 .btn-secondary:disabled {
   cursor: not-allowed;
 }
@@ -185,14 +180,6 @@ input:focus {
 .btn-add {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-.btn-add {
-  background-color: var(--color-grey-dark-1);
-}
-
-.btn-add:hover {
-  background-color: #303633;
 }
 
 /* Outline */
@@ -245,14 +232,6 @@ input:focus {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.btn-section {
-  background-color: var(--color-grey-dark-1);
-}
-
-.btn-section:hover {
-  background-color: #303633;
-}
-
 /* Banner */
 .btn-banner:link,
 .btn-banner:visited,
@@ -285,12 +264,24 @@ input:focus {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.btn-banner {
-  background-color: var(--color-grey-dark-1);
+/* Newsletter */
+.btn-newsletter {
+  background: linear-gradient(
+    180deg,
+    rgba(105, 188, 71, 1) 0%,
+    rgba(83, 146, 57, 1) 100%
+  );
 }
 
-.btn-banner:hover {
-  background-color: #303633;
+.btn-newsletter:hover {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: none;
+}
+
+.btn-newsletter:active,
+.btn-newsletter:focus {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: none;
 }
 
 .hidden {
