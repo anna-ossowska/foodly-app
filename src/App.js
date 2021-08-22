@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     const sendCartData = async () => {
       const response = await fetch(
-        'https://react-http-92c39-default-rtdb.europe-west1.firebasedatabase.app/foodlycart.json',
+        'https://foodly-d9746-default-rtdb.europe-west1.firebasedatabase.app/foodlycart.json',
         {
           method: 'PUT',
           body: JSON.stringify(cartState),
@@ -64,7 +64,7 @@ function App() {
   useEffect(() => {
     const getCartData = async () => {
       const response = await fetch(
-        'https://react-http-92c39-default-rtdb.europe-west1.firebasedatabase.app/foodlycart.json'
+        'https://foodly-d9746-default-rtdb.europe-west1.firebasedatabase.app/foodlycart.json'
       );
 
       if (!response.ok) {

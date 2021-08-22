@@ -26,6 +26,7 @@ const NewsLetter = () => {
         </p>
       );
     } else {
+      inputRef.current.value = '';
       setMsg(
         <p>
           <span>Thank you for your subscription!</span> You will receive the
